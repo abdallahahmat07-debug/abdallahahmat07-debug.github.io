@@ -242,7 +242,7 @@
             font-weight: 500;
         }
 
-        /* Publications Grid - CORRECTION TAILLES IMAGES */
+        /* Publications Grid */
         .publications-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -266,7 +266,7 @@
         }
 
         .pub-image {
-            height: 250px;  /* AGRANDI pour mieux voir */
+            height: 250px;
             position: relative;
             overflow: hidden;
         }
@@ -274,13 +274,8 @@
         .pub-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;  /* Garde les proportions */
+            object-fit: cover;
             display: block;
-        }
-
-        /* SUPPRIME les tags Image 1,2,3,4 */
-        .pub-image-tag {
-            display: none;  /* DISPARAÎT ! */
         }
 
         .pub-content {
@@ -291,15 +286,20 @@
             color: #F9A825;
             font-size: 14px;
             font-weight: 600;
-            text-transform: uppercase;
             margin-bottom: 10px;
             display: flex;
-            justify-content: space-between;  /* Pour aligner date et année */
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .pub-date span {
+        .pub-date .category {
+            text-transform: uppercase;
+        }
+
+        .pub-date .full-date {
             color: #666;
             font-weight: 400;
+            font-size: 13px;
         }
 
         .pub-content h3 {
@@ -356,10 +356,20 @@
         .article-card .article-meta {
             color: #F9A825;
             font-size: 13px;
-            text-transform: uppercase;
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+        }
+
+        .article-card .article-meta .category {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .article-card .article-meta .full-date {
+            color: #666;
+            font-weight: 400;
         }
 
         .article-card h3 {
@@ -373,7 +383,7 @@
             margin-bottom: 20px;
         }
 
-        /* Section Bibliographie SIMPLIFIÉE */
+        /* Bibliographie */
         .bio-section {
             background: white;
             padding: 60px 0;
@@ -444,11 +454,47 @@
         .contact-email {
             display: inline-block;
             margin-top: 20px;
+            margin-bottom: 30px;
             font-size: 20px;
             color: white;
             text-decoration: none;
             border-bottom: 2px solid #F9A825;
             padding-bottom: 5px;
+        }
+
+        .social-contact {
+            margin-top: 20px;
+        }
+
+        .social-contact h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .social-contact a {
+            color: white;
+            font-size: 24px;
+            margin-right: 20px;
+            transition: color 0.3s;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .social-contact a span {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #ddd;
+        }
+
+        .social-contact a:hover {
+            color: #F9A825;
+        }
+
+        .social-contact a:hover span {
+            color: white;
         }
 
         .contact-form input,
@@ -484,7 +530,7 @@
             color: white;
         }
 
-        /* Footer */
+        /* Footer - MODIFIÉ */
         footer {
             background: #1a2b3c;
             color: #b6c5d2;
@@ -494,20 +540,19 @@
 
         .footer-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .footer-links a {
-            color: #b6c5d2;
-            text-decoration: none;
-            margin-left: 20px;
-            transition: color 0.3s;
+        .footer-content .copyright {
+            font-size: 14px;
         }
 
-        .footer-links a:hover {
+        .footer-content .copyright i {
             color: #F9A825;
+            margin: 0 3px;
         }
 
         /* Responsive */
@@ -533,18 +578,18 @@
                 gap: 15px;
             }
 
-            .footer-links a {
-                margin: 0 10px;
-            }
-
             .publications-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .social-contact a {
+                margin-right: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Top Bar avec contacts -->
+    <!-- Top Bar avec contacts - PAS de noms ici -->
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-left">
@@ -555,7 +600,6 @@
                 <a href="https://www.linkedin.com/in/dr-amadou-wagne-905aa61a6" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://www.facebook.com/share/1XKHBKozrh/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://x.com/chaakidawagne" target="_blank"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://x.com/chaakidawagne" target="_blank"><i class="fab fa-twitter"></i></a> <!-- Compte X explicite -->
             </div>
         </div>
     </div>
@@ -579,7 +623,7 @@
         </div>
     </header>
 
-    <!-- Hero Section avec photo de profil -->
+    <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div class="container hero-content">
             <div class="hero-text">
@@ -613,7 +657,7 @@
         </div>
     </section>
 
-    <!-- Publications (articles longs) -->
+    <!-- Publications (avec dates complètes) -->
     <section id="publications" class="welcome-section" style="background: #f5f5f5;">
         <div class="container">
             <div class="section-title">
@@ -629,11 +673,11 @@
                     </div>
                     <div class="pub-content">
                         <div class="pub-date">
-                            THÈSE DE DOCTORAT 
-                            <span>· 2026</span>
+                            <span class="category">THÈSE DE DOCTORAT</span>
+                            <span class="full-date">15 mars 2026</span>
                         </div>
                         <h3>Le Sénégal dans le grand échange sino-occidental : Mécanismes, résistances et perspectives</h3>
-                        <p>Au milieu de l'été, j'apprenais enfin qu'il y avait en moi un été invincible. Mais ici, sous le soleil de plomb de Dakar, la lumière ne console pas toujours ; elle déshabille les illusions et expose la nudité des rapports de force...</p>
+                        <p>Au milieu de l'été, j'apprenais enfin qu'il y avait en moi un été invincible. Mais ici, sous le soleil de plomb de Dakar, la lumière ne console pas toujours...</p>
                         <a href="#" class="read-more" onclick="window.location.href='publication1.html'; return false;">Lire l'article <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -645,11 +689,11 @@
                     </div>
                     <div class="pub-content">
                         <div class="pub-date">
-                            ARTICLE ACADÉMIQUE 
-                            <span>· 2025</span>
+                            <span class="category">ARTICLE ACADÉMIQUE</span>
+                            <span class="full-date">22 janvier 2025</span>
                         </div>
                         <h3>Dialogue national et refondation politique : pour un néo-semi-présidentialisme sénégalais</h3>
-                        <p>Le Sénégal cristallise le débat théorique sur la nature des régimes politiques. Son système institutionnel, issu de la Constitution de 2001 modifiée, défie les catégorisations traditionnelles...</p>
+                        <p>Le Sénégal cristallise le débat théorique sur la nature des régimes politiques. Son système institutionnel, issu de la Constitution de 2001 modifiée...</p>
                         <a href="#" class="read-more" onclick="window.location.href='publication2.html'; return false;">Lire l'article <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -661,8 +705,8 @@
                     </div>
                     <div class="pub-content">
                         <div class="pub-date">
-                            ANALYSE GÉOPOLITIQUE 
-                            <span>· 2025</span>
+                            <span class="category">ANALYSE GÉOPOLITIQUE</span>
+                            <span class="full-date">5 février 2025</span>
                         </div>
                         <h3>La Stratégie du phare : comment le Sénégal monétise sa paix dans une région en feu</h3>
                         <p>L'Afrique de l'Ouest vacille ! Elle est le théâtre où s'écrivent, dans la fièvre et le bruit sourd des casernes, les nouvelles formes d'un pouvoir postcolonial inquiet...</p>
@@ -677,8 +721,8 @@
                     </div>
                     <div class="pub-content">
                         <div class="pub-date">
-                            ANALYSE DIPLOMATIQUE 
-                            <span>· 2026</span>
+                            <span class="category">ANALYSE DIPLOMATIQUE</span>
+                            <span class="full-date">3 mars 2026</span>
                         </div>
                         <h3>Les racines sénégalaises, les ailes africaines : Mécanique d'une candidature africaine aux Nations unies</h3>
                         <p>Il est des règles que l'on croit écrites dans le marbre des traités alors qu'elles gouvernent, plus souterrainement, les profondeurs de la pratique diplomatique...</p>
@@ -689,7 +733,7 @@
         </div>
     </section>
 
-    <!-- Articles (textes plus courts) -->
+    <!-- Articles (avec dates complètes) -->
     <section id="articles" class="welcome-section">
         <div class="container">
             <div class="section-title">
@@ -700,8 +744,8 @@
             <div class="articles-grid">
                 <div class="article-card">
                     <div class="article-meta">
-                        PARUTION THÈSE 
-                        <span>2026</span>
+                        <span class="category">PARUTION THÈSE</span>
+                        <span class="full-date">15 mars 2026</span>
                     </div>
                     <h3>L'été invincible : retour sur un parcours de thèse</h3>
                     <p>« Au milieu de l'été, j'apprenais enfin qu'il y avait en moi un été invincible. Écrire cette thèse, c'était refuser de détourner le regard... »</p>
@@ -710,8 +754,8 @@
 
                 <div class="article-card">
                     <div class="article-meta">
-                        RECHERCHE 
-                        <span>2025</span>
+                        <span class="category">RECHERCHE</span>
+                        <span class="full-date">10 novembre 2025</span>
                     </div>
                     <h3>Pour une souveraineté en creux : repenser la relation sino-sénégalaise</h3>
                     <p>Le Sénégal doit cesser de favoriser systématiquement les entreprises étrangères dans les appels d'offres...</p>
@@ -720,8 +764,8 @@
 
                 <div class="article-card">
                     <div class="article-meta">
-                        DIALOGUE NATIONAL 
-                        <span>2025</span>
+                        <span class="category">DIALOGUE NATIONAL</span>
+                        <span class="full-date">18 septembre 2025</span>
                     </div>
                     <h3>Les quatre piliers d'un néo-semi-présidentialisme</h3>
                     <p>1. Un président garant de la continuité étatique ; 2. Un Parlement revitalisé par une dose de proportionnelle...</p>
@@ -730,8 +774,8 @@
 
                 <div class="article-card">
                     <div class="article-meta">
-                        DIPLOMATIE 
-                        <span>2026</span>
+                        <span class="category">DIPLOMATIE</span>
+                        <span class="full-date">5 mars 2026</span>
                     </div>
                     <h3>Le silence de Dakar : anatomie d'un portage discret</h3>
                     <p>L'absence de soutien explicite ne signifie pas l'absence de portage. Une lecture attentive des signaux diplomatiques...</p>
@@ -741,7 +785,7 @@
         </div>
     </section>
 
-    <!-- Bibliographie simplifiée -->
+    <!-- Bibliographie -->
     <section id="bibliographie" class="bio-section">
         <div class="container">
             <div class="section-title">
@@ -771,7 +815,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - AVEC Twitter et envoi vers email -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-title">
@@ -782,26 +826,35 @@
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h3>Échangeons ensemble</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Université Cheikh Anta Diop, Dakar</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</p>
                     <p><i class="fas fa-phone"></i> +221 77 871 70 68</p>
                     <p><i class="fas fa-envelope"></i> wagne6151@gmail.com</p>
                     
                     <a href="mailto:wagne6151@gmail.com" class="contact-email">Envoyer un email</a>
                     
-                    <div style="margin-top: 30px;">
-                        <h4 style="color: white; margin-bottom: 15px;">Réseaux sociaux</h4>
-                        <a href="https://www.linkedin.com/in/dr-amadou-wagne-905aa61a6" target="_blank" style="color: white; font-size: 24px; margin-right: 20px;"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.facebook.com/share/1XKHBKozrh/" target="_blank" style="color: white; font-size: 24px; margin-right: 20px;"><i class="fab fa-facebook"></i></a>
-                        <a href="https://x.com/chaakidawagne" target="_blank" style="color: white; font-size: 24px;"><i class="fab fa-x-twitter"></i></a>
+                    <div class="social-contact">
+                        <h4>Réseaux sociaux</h4>
+                        <a href="https://www.linkedin.com/in/dr-amadou-wagne-905aa61a6" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.facebook.com/share/1XKHBKozrh/" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://x.com/chaakidawagne" target="_blank">
+                            <i class="fab fa-x-twitter"></i>
+                            <span>X (Twitter)</span>
+                        </a>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form>
-                        <input type="text" placeholder="Votre nom" required>
-                        <input type="email" placeholder="Votre email" required>
-                        <input type="text" placeholder="Sujet">
-                        <textarea placeholder="Votre message" required></textarea>
+                    <form action="mailto:wagne6151@gmail.com" method="post" enctype="text/plain">
+                        <input type="text" name="nom" placeholder="Votre nom" required>
+                        <input type="email" name="email" placeholder="Votre email" required>
+                        <input type="text" name="sujet" placeholder="Sujet" required>
+                        <textarea name="message" placeholder="Votre message" required></textarea>
                         <button type="submit" class="btn">Envoyer le message</button>
                     </form>
                 </div>
@@ -809,16 +862,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - MODIFIÉ : seulement Ubuntu & Politique -->
     <footer>
         <div class="container footer-content">
-            <div>© 2026 Ubuntu & Politique · Dr Amadou Wagne</div>
-            <div class="footer-links">
-                <a href="#accueil">Accueil</a>
-                <a href="#publications">Publications</a>
-                <a href="#articles">Articles</a>
-                <a href="#bibliographie">Bibliographie</a>
-                <a href="#contact">Contact</a>
+            <div class="copyright">
+                <i class="fas fa-copyright"></i> 2026 Ubuntu & Politique - Tous droits réservés
             </div>
         </div>
     </footer>
