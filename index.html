@@ -530,7 +530,7 @@
             color: white;
         }
 
-        /* Footer - MODIFIÉ */
+        /* Footer */
         footer {
             background: #1a2b3c;
             color: #b6c5d2;
@@ -589,7 +589,7 @@
     </style>
 </head>
 <body>
-    <!-- Top Bar avec contacts - PAS de noms ici -->
+    <!-- Top Bar avec contacts et X ajouté -->
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-left">
@@ -599,7 +599,7 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/dr-amadou-wagne-905aa61a6" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://www.facebook.com/share/1XKHBKozrh/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://x.com/chaakidawagne" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://x.com/chaakidawagne" target="_blank"><i class="fab fa-x-twitter"></i></a> <!-- X AJOUTÉ -->
             </div>
         </div>
     </div>
@@ -657,7 +657,7 @@
         </div>
     </section>
 
-    <!-- Publications (avec dates complètes) -->
+    <!-- Publications -->
     <section id="publications" class="welcome-section" style="background: #f5f5f5;">
         <div class="container">
             <div class="section-title">
@@ -682,7 +682,7 @@
                     </div>
                 </div>
 
-                <!-- Publication 2 : Néosemi-présidentialisme -->
+                <!-- Publication 2 -->
                 <div class="pub-card">
                     <div class="pub-image">
                         <img src="image-2.jpg" alt="Image illustration article constitutionnel">
@@ -698,7 +698,7 @@
                     </div>
                 </div>
 
-                <!-- Publication 3 : Stratégie du phare -->
+                <!-- Publication 3 -->
                 <div class="pub-card">
                     <div class="pub-image">
                         <img src="image-3.jpg" alt="Image illustration géopolitique">
@@ -714,7 +714,7 @@
                     </div>
                 </div>
 
-                <!-- Publication 4 : Candidature ONU -->
+                <!-- Publication 4 -->
                 <div class="pub-card">
                     <div class="pub-image">
                         <img src="image-4.jpg" alt="Image illustration diplomatie">
@@ -733,7 +733,7 @@
         </div>
     </section>
 
-    <!-- Articles (avec dates complètes) -->
+    <!-- Articles -->
     <section id="articles" class="welcome-section">
         <div class="container">
             <div class="section-title">
@@ -815,7 +815,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - AVEC Twitter et envoi vers email -->
+    <!-- Contact Section avec formulaire Formspree -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-title">
@@ -844,25 +844,27 @@
                         </a>
                         <a href="https://x.com/chaakidawagne" target="_blank">
                             <i class="fab fa-x-twitter"></i>
-                            <span>X (Twitter)</span>
+                            <span>X</span> <!-- MODIFIÉ : seulement X -->
                         </a>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form action="mailto:wagne6151@gmail.com" method="post" enctype="text/plain">
+                    <!-- Formulaire Formspree (sécurisé) -->
+                    <form action="https://formspree.io/f/wagne6151@gmail.com" method="POST">
                         <input type="text" name="nom" placeholder="Votre nom" required>
                         <input type="email" name="email" placeholder="Votre email" required>
                         <input type="text" name="sujet" placeholder="Sujet" required>
                         <textarea name="message" placeholder="Votre message" required></textarea>
                         <button type="submit" class="btn">Envoyer le message</button>
                     </form>
+                    <p style="color: #ddd; font-size: 12px; margin-top: 10px;">✓ Formulaire sécurisé - Vos données sont protégées</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer - MODIFIÉ : seulement Ubuntu & Politique -->
+    <!-- Footer -->
     <footer>
         <div class="container footer-content">
             <div class="copyright">
