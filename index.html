@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubuntu & Politique - Dr Amadou Wagne</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700|Poppins:400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            color: #2e3d44;
+            line-height: 1.6;
+            background: #fafafa;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #1a2b3c;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar - Vert élégant */
+        .top-bar {
+            background: #2E7D32;  /* Vert foncé élégant */
+            padding: 10px 0;
+            color: white;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .top-bar-left a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+
+        .top-bar-left i {
+            margin-right: 8px;
+        }
+
+        .social-links a {
+            color: white;
+            margin-left: 15px;
+            font-size: 18px;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Main Header */
+        .main-header {
+            background: white;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            color: #2E7D32;  /* Vert pour le logo */
+            margin: 0;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: #666;
+            font-weight: 400;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #2e3d44;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: #F9A825;  /* Jaune doré au survol */
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #F9A825;  /* Jaune */
+            transition: width 0.3s;
+        }
+
+        nav a:hover:after, nav a.active:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+
+        .hero-text h1 span {
+            color: #2E7D32;  /* Vert */
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            font-style: italic;
+            border-left: 4px solid #F9A825;  /* Jaune */
+            padding-left: 20px;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .image-caption {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Section titre */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title .divider {
+            width: 80px;
+            height: 3px;
+            background: #F9A825;  /* Jaune */
+            margin: 0 auto;
+        }
+
+        /* Welcome Message */
+        .welcome-section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .welcome-box {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 10px;
+            border-left: 5px solid #2E7D32;  /* Vert */
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .welcome-box p {
+            margin-bottom: 20px;
+        }
+
+        .welcome-box .signature {
+            font-style: italic;
+            color: #2E7D32;  /* Vert */
+            font-weight: 500;
+        }
+
+        /* Publications Grid */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pub-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .pub-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(46,125,50,0.15);  /* Vert léger */
+            border-color: #2E7D32;
+        }
+
+        .pub-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pub-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pub-image-tag {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .pub-content {
+            padding: 25px;
+        }
+
+        .pub-date {
+            color: #F9A825;  /* Jaune */
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .pub-content h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1a2b3c;
+        }
+
+        .pub-content p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: #2E7D32;  /* Vert */
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 10px;
+            color: #F9A825;  /* Jaune au survol */
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .article-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .article-card:hover {
+            border-color: #2E7D32;
+            box-shadow: 0 10px 25px rgba(46,125,50,0.1);
+        }
+
+        .article-card .article-meta {
+            color: #F9A825;  /* Jaune */
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .article-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .article-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Section Bibliographie */
+        .bio-section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .bio-wrapper {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .bio-text {
+            flex: 2;
+        }
+
+        .bio-text p {
+            margin-bottom: 20px;
+            color: #444;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .bio-text .fr, .bio-text .en {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .bio-text .en {
+            background: #fff;
+            border-left: 4px solid #F9A825;  /* Jaune */
+        }
+
+        .bio-sidebar {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .bio-sidebar h4 {
+            color: #2E7D32;  /* Vert */
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .bio-sidebar ul {
+            list-style: none;
+        }
+
+        .bio-sidebar li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .bio-sidebar li:before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #F9A825;  /* Jaune */
+            font-size: 18px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #1a2b3c 0%, #2E7D32 100%);  /* Dégradé vert */
+            color: white;
+            padding: 80px 0;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        .contact-info i {
+            color: #F9A825;  /* Jaune */
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid #F9A825;  /* Jaune */
+            padding-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: #F9A825;  /* Jaune */
+            color: #1a2b3c;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #2E7D32;  /* Vert */
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a2b3c;
+            color: #b6c5d2;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #b6c5d2;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #F9A825;  /* Jaune */
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content,
+            .bio-wrapper,
+            .contact-wrapper {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+
+            .main-header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-links a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar avec contacts -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="tel:+221778717068"><i class="fas fa-phone"></i> +221 77 871 70 68</a>
+                <a href="mailto:wagne6151@gmail.com"><i class="fas fa-envelope"></i> wagne6151@gmail.com</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/dr-amadou-wagne-905aa61a6" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/share/1XKHBKozrh/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/chaakidawagne" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>UBUNTU & POLITIQUE</h1>
+                <span>Dr Amadou Wagne · Docteur en Sciences Politiques</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#accueil" class="active">Accueil</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#bibliographie">Bibliographie</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section avec VRAIE photo de profil -->
+    <section id="accueil" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Dr <span>Amadou Wagne</span></h1>
+                <p class="hero-description">
+                    « Je me définis avant tout comme un jeune chercheur en sciences politiques et relations internationales, animé par la volonté d'interroger des objets peu explorés à travers le prisme du décentrement comme paradigme analytique. »
+                </p>
+                <p>Spécialiste en Gouvernance internationale · UCAD</p>
+            </div>
+            <div class="hero-image">
+                <img src="images/photo-profil.jpg" alt="Dr Amadou Wagne - Photo Officielle">
+                <div class="image-caption">Photo du Profil Officiel</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message de bienvenue -->
+    <section class="welcome-section">
+        <div class="container">
+            <div class="welcome-box">
+                <p>Que vous soyez Professeur, chercheur, étudiant, citoyen engagé ou simple curieux, vous trouverez dans ces pages des analyses approfondies, des contributions libres, des débats contradictoires et des regards croisés sur les dynamiques politiques au Sénégal et en Afrique qui traversent l'Afrique. Élections, mouvements sociaux, intégration régionale, justice, mémoire, développement, démocratie, géopolitique - chaque sujet est abordé avec rigueur et ouverture, dans un esprit de dialogue et de respect.</p>
+                
+                <p>Notre plateforme se veut une agora numérique où la parole circule, où les idées s'enrichissent mutuellement, où la différence n'est pas un obstacle mais une force. Nous croyons que la politique, loin d'être un champ de bataille, peut redevenir un espace de construction collective -- et c'est ensemble que nous y parviendrons.</p>
+                
+                <p>Alors, prenez place sous l'arbre à palabres. Lisez, réagissez, proposez vos textes. Faites de ce lieu le vôtre.</p>
+                
+                <p class="signature">Bienvenue dans la conversation. Bienvenue dans Ubuntu & Politique.</p>
+                <p style="text-align: right; font-weight: 500;">— L'équipe de rédaction</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications (articles longs) -->
+    <section id="publications" class="welcome-section" style="background: #f5f5f5;">
+        <div class="container">
+            <div class="section-title">
+                <h2>PUBLICATIONS</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="publications-grid">
+                <!-- Publication 1 : Thèse avec Image 1 -->
+                <div class="pub-card">
+                    <div class="pub-image">
+                        <img src="images/image-1.jpg" alt="Image 1">
+                        <div class="pub-image-tag">Image 1</div>
+                    </div>
+                    <div class="pub-content">
+                        <div class="pub-date">THÈSE DE DOCTORAT · 2026</div>
+                        <h3>Le Sénégal dans le grand échange sino-occidental : Mécanismes, résistances et perspectives</h3>
+                        <p>Au milieu de l'été, j'apprenais enfin qu'il y avait en moi un été invincible. Mais ici, sous le soleil de plomb de Dakar, la lumière ne console pas toujours ; elle déshabille les illusions et expose la nudité des rapports de force. J'ai choisi d'interroger ce dialogue asymétrique entre l'Empire du Milieu et la terre de la Teranga...</p>
+                        <p><strong>Extrait :</strong> « La stratégie du "grand écart" sénégalais est, en soi, une œuvre de Sisyphe. C'est l'effort désespéré et magnifique d'une nation qui tente de tenir ensemble deux mondes contraires. »</p>
+                        <a href="#" class="read-more">Lire la thèse <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Publication 2 : Néosemi-présidentialisme avec Image 2 -->
+                <div class="pub-card">
+                    <div class="pub-image">
+                        <img src="images/image-2.jpg" alt="Image 2">
+                        <div class="pub-image-tag">Image 2</div>
+                    </div>
+                    <div class="pub-content">
+                        <div class="pub-date">ARTICLE ACADÉMIQUE · 2025</div>
+                        <h3>Dialogue national et refondation politique : pour un néo-semi-présidentialisme sénégalais</h3>
+                        <p>Le Sénégal cristallise le débat théorique sur la nature des régimes politiques. Son système institutionnel, issu de la Constitution de 2001 modifiée, défie les catégorisations traditionnelles par son hybridité assumée mais mal équilibrée.</p>
+                        <p><strong>Proposition :</strong> Un "néo-semi-présidentialisme" articulé autour de quatre principes cardinaux : un président garant de la continuité étatique, un Parlement revitalisé, un Premier ministre véritable chef de gouvernement, et une Cour constitutionnelle gardienne active des équilibres.</p>
+                        <a href="#" class="read-more">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Publication 3 : Stratégie du phare avec Image 3 -->
+                <div class="pub-card">
+                    <div class="pub-image">
+                        <img src="images/image-3.jpg" alt="Image 3">
+                        <div class="pub-image-tag">Image 3</div>
+                    </div>
+                    <div class="pub-content">
+                        <div class="pub-date">ANALYSE GÉOPOLITIQUE · 2025</div>
+                        <h3>La Stratégie du phare : comment le Sénégal monétise sa paix dans une région en feu</h3>
+                        <p>L'Afrique de l'Ouest vacille ! Elle est le théâtre où s'écrivent, dans la fièvre et le bruit sourd des casernes, les nouvelles formes d'un pouvoir postcolonial inquiet. Les coups d'État, hier exception, menacent de devenir grammaire politique.</p>
+                        <p>Dans cette géopolitique de l'instabilité, une autre bataille, moins bruyante mais tout aussi décisive, se joue : celle de l'image, du récit, du capital symbolique. Le Sénégal orchestre une manœuvre subtile avec les armes de son siècle : un ballon rond et une mélodie.</p>
+                        <a href="#" class="read-more">Lire l'analyse <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Publication 4 : Candidature ONU avec Image 4 -->
+                <div class="pub-card">
+                    <div class="pub-image">
+                        <img src="images/image-4.jpg" alt="Image 4">
+                        <div class="pub-image-tag">Image 4</div>
+                    </div>
+                    <div class="pub-content">
+                        <div class="pub-date">DIPLOMATIE · 2026</div>
+                        <h3>Les racines sénégalaises, les ailes africaines : Mécanique d'une candidature africaine aux Nations unies</h3>
+                        <p>Il est des règles que l'on croit écrites dans le marbre des traités alors qu'elles gouvernent, plus souterrainement, les profondeurs de la pratique diplomatique. La candidature de Macky Sall au poste de secrétaire général des Nations unies, déposée le 2 mars 2026 par le Burundi au nom de l'Union africaine, offre une illustration magistrale de cette mécanique subtile.</p>
+                        <p><em>« En diplomatie, ce qui n'est pas dit est souvent plus important que ce qui s'exprime. Le silence des chancelleries est parfois le plus éloquent des aveux. »</em> — Talleyrand</p>
+                        <a href="#" class="read-more">Lire l'analyse <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles (textes plus courts) -->
+    <section id="articles" class="welcome-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>ARTICLES & CONTRIBUTIONS</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="articles-grid">
+                <div class="article-card">
+                    <div class="article-meta">PARUTION THÈSE · 2026</div>
+                    <h3>L'été invincible : retour sur un parcours de thèse</h3>
+                    <p>« Au milieu de l'été, j'apprenais enfin qu'il y avait en moi un été invincible. Écrire cette thèse, c'était refuser de détourner le regard devant l'absurdité d'un monde où la souveraineté se négocie dans l'ombre de contrats opaques. »</p>
+                    <a href="#" class="read-more">Lire <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-meta">RECHERCHE · 2025</div>
+                    <h3>Pour une souveraineté en creux : repenser la relation sino-sénégalaise</h3>
+                    <p>Le Sénégal doit cesser de favoriser systématiquement les entreprises étrangères dans les appels d'offres. Il faut imposer des clauses de sous-traitance obligatoire et s'inspirer du modèle nigérian qui impose une participation locale de 30 %.</p>
+                    <a href="#" class="read-more">Lire <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-meta">DIALOGUE NATIONAL · 2025</div>
+                    <h3>Les quatre piliers d'un néo-semi-présidentialisme</h3>
+                    <p>1. Un président garant de la continuité étatique ; 2. Un Parlement revitalisé par une dose de proportionnelle (30-40%) ; 3. Un Premier ministre véritable chef de l'action gouvernementale ; 4. Une Cour constitutionnelle gardienne active des équilibres.</p>
+                    <a href="#" class="read-more">Lire <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-meta">DIPLOMATIE · 2026</div>
+                    <h3>Le silence de Dakar : anatomie d'un portage discret</h3>
+                    <p>L'absence de soutien explicite ne signifie pas l'absence de portage. Une lecture attentive des signaux diplomatiques révèle, en creux, l'existence d'un aval national — discret, tacite, mais néanmoins réel.</p>
+                    <a href="#" class="read-more">Lire <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bibliographie / Parcours -->
+    <section id="bibliographie" class="bio-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>BIBLIOGRAPHIE</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="bio-wrapper">
+                <div class="bio-text">
+                    <div class="fr">
+                        <h3 style="color: #2E7D32; margin-bottom: 15px;">🇫🇷 Version française</h3>
+                        <p>Je suis Amadou Wagne, docteur en sciences politiques et spécialiste des questions de gouvernance internationale. La recherche est ma passion première — ce laboratoire permanent où l'on dissèque les mécanismes du pouvoir, les dynamiques institutionnelles et les grands défis qui traversent notre monde et l'Afrique dans le nouvel ordre mondial.</p>
+                        
+                        <p>Mais je suis aussi un amoureux des mots. Écrivain, auteur, je crois profondément que l'analyse politique gagne à être partagée, discutée, voire débattue. C'est cette double casquette — le chercheur rigoureux et l'écrivain engagé — que j'apporte aujourd'hui à Ubuntu & Politique.</p>
+                        
+                        <p>Ici, je propose des analyses, des réflexions et des contributions sur l'actualité africaine et internationale, toujours avec un regard ancré dans les réalités du continent et une exigence de clarté. Parce que la politique, c'est d'abord une affaire de compréhension collective.</p>
+                    </div>
+                    
+                    <div class="en">
+                        <h3 style="color: #2E7D32; margin-bottom: 15px;">🇬🇧 English version</h3>
+                        <p>I am Amadou Wagne, Ph.D. in Political Science, specializing in international governance. Research is my first passion — that constant laboratory where we dissect the mechanisms of power, institutional dynamics, and the major challenges shaping our world and Africa within the new global order.</p>
+                        
+                        <p>But I am also a lover of words. As a writer and author, I firmly believe that political analysis gains strength when it is shared, discussed, and even debated. It is with this dual role — the rigorous researcher and the engaged writer — that I contribute to Ubuntu & Politique.</p>
+                        
+                        <p>Here, I offer analyses, reflections, and insights on African and global current affairs, always with a perspective grounded in the continent's realities and a commitment to clarity. Because politics, at its core, is about collective understanding.</p>
+                    </div>
+                </div>
+                
+                <div class="bio-sidebar">
+                    <h4>Parcours académique</h4>
+                    <ul>
+                        <li><strong>2026</strong> — Doctorat en Sciences Politiques, UCAD (Mention Très Honorable)</li>
+                        <li><strong>2021</strong> — Master en Études Politiques, UCAD</li>
+                        <li><strong>2015</strong> — Baccalauréat L'1, Lycée Malick Sy (Thiès)</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 30px;">Domaines d'expertise</h4>
+                    <ul>
+                        <li>Gouvernance internationale</li>
+                        <li>Relations sino-africaines</li>
+                        <li>Réformes institutionnelles</li>
+                        <li>Diplomatie et soft power</li>
+                        <li>Démocratie et élections</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 30px;">Contact direct</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li><i class="fas fa-phone" style="color: #2E7D32; width: 25px;"></i> +221 77 871 70 68</li>
+                        <li><i class="fas fa-envelope" style="color: #2E7D32; width: 25px;"></i> wagne6151@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">CONTACT</h2>
+                <div class="divider" style="background: #F9A825;"></div>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Échangeons ensemble</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Université Cheikh Anta Diop, Dakar</p>
+                    <p><i class="fas fa-phone"></i> +221 77 871 70 68</p>
+                    <p><i class="fas fa-envelope"></i> wagne6151@gmail.com</p>
+                    
+                    <a href="mailto:wagne6151@gmail.com" class="contact-email">Envoyer un email</a>
+                    
+                    <div style="margin-top: 30px;">
+                        <h4 style="color: white; margin-bottom: 15px;">Réseaux sociaux</h4>
+                        <a href="https://www.linkedin.com/in/dr-amadou-wagne-905aa61a6" target="_blank" style="color: white; font-size: 24px; margin-right: 20px;"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/share/1XKHBKozrh/" target="_blank" style="color: white; font-size: 24px; margin-right: 20px;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/chaakidawagne" target="_blank" style="color: white; font-size: 24px;"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Votre nom" required>
+                        <input type="email" placeholder="Votre email" required>
+                        <input type="text" placeholder="Sujet">
+                        <textarea placeholder="Votre message" required></textarea>
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div>© 2026 Ubuntu & Politique · Dr Amadou Wagne</div>
+            <div class="footer-links">
+                <a href="#accueil">Accueil</a>
+                <a href="#publications">Publications</a>
+                <a href="#articles">Articles</a>
+                <a href="#bibliographie">Bibliographie</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
