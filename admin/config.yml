@@ -1,9 +1,8 @@
 backend:
-  name: github
-  repo: abdallahahmat07-debug/abdallahahmat07-debug.github.io
+  name: git-gateway
   branch: main
 
-media_folder: 'images'  # Les images seront stockées ici
+media_folder: 'images'
 public_folder: '/images'
 
 collections:
