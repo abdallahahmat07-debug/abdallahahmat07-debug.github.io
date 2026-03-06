@@ -32,7 +32,7 @@
             padding: 0 20px;
         }
 
-        /* Top Bar */
+        /* Top Bar - UNIQUEMENT RÉSEAUX SOCIAUX */
         .top-bar {
             background: #2E7D32;
             padding: 10px 0;
@@ -41,30 +41,18 @@
 
         .top-bar .container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .top-bar-left a {
-            color: white;
-            text-decoration: none;
-            margin-right: 20px;
-            font-size: 14px;
-        }
-
-        .top-bar-left i {
-            margin-right: 8px;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
 
         .social-links a {
             color: white;
-            font-size: 18px;
+            font-size: 20px;
             transition: opacity 0.3s;
             text-decoration: none;
         }
@@ -73,7 +61,7 @@
             opacity: 0.8;
         }
 
-        /* Main Header */
+        /* Main Header - UBUNTU & POLITIQUE EN GRAND */
         .main-header {
             background: white;
             box-shadow: 0 3px 15px rgba(0,0,0,0.08);
@@ -90,7 +78,7 @@
         }
 
         .logo h1 {
-            font-size: 28px;
+            font-size: 42px;
             color: #2E7D32;
             margin: 0;
             line-height: 1.2;
@@ -98,7 +86,7 @@
         }
 
         .logo span {
-            font-size: 14px;
+            font-size: 16px;
             color: #666;
             font-weight: 400;
             display: block;
@@ -138,61 +126,44 @@
             width: 100%;
         }
 
-        /* Hero Section */
+        /* Hero Section - NOUVEAU STYLE */
         .hero {
             background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-            padding: 60px 0;
+            padding: 80px 0;
             border-bottom: 1px solid #eee;
         }
 
         .hero-content {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 50px;
-        }
-
-        .hero-text {
-            flex: 1;
+            text-align: center;
+            gap: 30px;
         }
 
         .hero-text h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
+            font-size: 48px;
+            margin-bottom: 10px;
             color: #1a2b3c;
         }
 
         .hero-text h1 span {
             color: #2E7D32;
-            font-style: italic;
         }
 
-        .hero-description {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 30px;
-            font-style: italic;
-            border-left: 4px solid #F9A825;
-            padding-left: 20px;
-        }
-
-        .hero-image {
-            flex: 1;
-            text-align: center;
+        .hero-text p {
+            font-size: 20px;
+            color: #666;
+            margin-top: 5px;
         }
 
         .hero-image img {
-            width: 350px;
-            height: 350px;
+            width: 450px;
+            height: 450px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid white;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .image-caption {
-            margin-top: 10px;
-            color: #666;
-            font-size: 14px;
         }
 
         /* Section titre */
@@ -337,7 +308,7 @@
             color: #F9A825;
         }
 
-        /* Articles Grid */
+        /* Articles & Contributions Grid */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -388,41 +359,50 @@
             margin-bottom: 20px;
         }
 
-        /* Bibliographie */
+        /* BIOGRAPHIE (au lieu de bibliographie) */
         .bio-section {
             background: white;
             padding: 60px 0;
         }
 
         .bio-wrapper {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
         }
 
-        .bio-text {
+        .bio-column {
             background: #f9f9f9;
             padding: 40px;
             border-radius: 10px;
             border-left: 5px solid #2E7D32;
         }
 
-        .bio-text h3 {
+        .bio-column h3 {
             color: #2E7D32;
             margin-bottom: 20px;
             font-size: 24px;
+            position: relative;
+            padding-bottom: 10px;
         }
 
-        .bio-text p {
+        .bio-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #F9A825;
+        }
+
+        .bio-column p {
             margin-bottom: 20px;
             color: #444;
             font-size: 16px;
             line-height: 1.8;
-        }
-
-        .bio-text .en {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
         }
 
         /* Contact Section */
@@ -583,8 +563,10 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero-content,
-            .contact-wrapper {
+            .contact-wrapper,
+            .bio-wrapper {
                 flex-direction: column;
+                grid-template-columns: 1fr;
             }
 
             .main-header .container {
@@ -614,13 +596,9 @@
     </style>
 </head>
 <body>
-    <!-- Top Bar avec contacts -->
+    <!-- Top Bar - UNIQUEMENT RÉSEAUX SOCIAUX -->
     <div class="top-bar">
         <div class="container">
-            <div class="top-bar-left">
-                <a href="tel:+221778717068"><i class="fas fa-phone"></i> +221 77 871 70 68</a>
-                <a href="mailto:wagne6151@gmail.com"><i class="fas fa-envelope"></i> wagne6151@gmail.com</a>
-            </div>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/dr-amadou-wagne-905aa61a6" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://www.facebook.com/share/1XKHBKozrh/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -629,38 +607,33 @@
         </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header - UBUNTU & POLITIQUE EN GRAND -->
     <header class="main-header">
         <div class="container">
             <div class="logo">
                 <h1>UBUNTU & POLITIQUE</h1>
-                <span>Dr Amadou Wagne · Docteur en Sciences Politiques</span>
             </div>
             <nav>
                 <ul>
                     <li><a href="#accueil" class="active">Accueil</a></li>
                     <li><a href="#publications">Publications</a></li>
-                    <li><a href="#articles">Articles</a></li>
-                    <li><a href="#bibliographie">Bibliographie</a></li>
+                    <li><a href="#articles">Articles & Contributions</a></li>
+                    <li><a href="#biographie">Biographie</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - NOUVEAU STYLE -->
     <section id="accueil" class="hero">
         <div class="container hero-content">
+            <div class="hero-image">
+                <img src="photo-profil.jpg" alt="Dr Amadou Wagne">
+            </div>
             <div class="hero-text">
                 <h1>Dr <span>Amadou Wagne</span></h1>
-                <p class="hero-description">
-                    « Je me définis avant tout comme un jeune chercheur en sciences politiques et relations internationales, animé par la volonté d'interroger des objets peu explorés à travers le prisme du décentrement comme paradigme analytique. »
-                </p>
-                <p>Spécialiste en Gouvernance internationale · UCAD</p>
-            </div>
-            <div class="hero-image">
-                <img src="photo-profil.jpg" alt="Dr Amadou Wagne - Photo Officielle">
-                <div class="image-caption">Photo du Profil Officiel</div>
+                <p>Docteur en Sciences Politiques<br>Spécialiste en Gouvernance Internationale</p>
             </div>
         </div>
     </section>
@@ -699,7 +672,7 @@
                     <div class="pub-content">
                         <div class="pub-date">
                             <span class="category">THÈSE DE DOCTORAT</span>
-                            <span class="full-date">15 mars 2026</span>
+                            <span class="full-date">21 février 2026</span>
                         </div>
                         <h3>Le Sénégal dans le grand échange sino-occidental : Mécanismes, résistances et perspectives</h3>
                         <p>Au milieu de l'été, j'apprenais enfin qu'il y avait en moi un été invincible. Mais ici, sous le soleil de plomb de Dakar, la lumière ne console pas toujours...</p>
@@ -714,7 +687,7 @@
                     </div>
                     <div class="pub-content">
                         <div class="pub-date">
-                            <span class="category">ARTICLE ACADÉMIQUE</span>
+                            <span class="category">ANALYSE POLITIQUE</span>
                             <span class="full-date">22 janvier 2025</span>
                         </div>
                         <h3>Dialogue national et refondation politique : pour un néo-semi-présidentialisme sénégalais</h3>
@@ -758,7 +731,7 @@
         </div>
     </section>
 
-    <!-- Articles -->
+    <!-- Articles & Contributions -->
     <section id="articles" class="welcome-section">
         <div class="container">
             <div class="section-title">
@@ -770,7 +743,7 @@
                 <div class="article-card">
                     <div class="article-meta">
                         <span class="category">PARUTION THÈSE</span>
-                        <span class="full-date">15 mars 2026</span>
+                        <span class="full-date">mars 2026</span>
                     </div>
                     <h3>L'été invincible : retour sur un parcours de thèse</h3>
                     <p>« Au milieu de l'été, j'apprenais enfin qu'il y avait en moi un été invincible. Écrire cette thèse, c'était refuser de détourner le regard... »</p>
@@ -810,37 +783,37 @@
         </div>
     </section>
 
-    <!-- Bibliographie -->
-    <section id="bibliographie" class="bio-section">
+    <!-- BIOGRAPHIE (deux colonnes sans drapeaux) -->
+    <section id="biographie" class="bio-section">
         <div class="container">
             <div class="section-title">
-                <h2>BIBLIOGRAPHIE</h2>
+                <h2>BIOGRAPHIE</h2>
                 <div class="divider"></div>
             </div>
 
             <div class="bio-wrapper">
-                <div class="bio-text">
-                    <h3>🇫🇷 Version française</h3>
+                <div class="bio-column">
+                    <h3>Français</h3>
                     <p>Je suis Amadou Wagne, docteur en sciences politiques et spécialiste des questions de gouvernance internationale. La recherche est ma passion première — ce laboratoire permanent où l'on dissèque les mécanismes du pouvoir, les dynamiques institutionnelles et les grands défis qui traversent notre monde et l'Afrique dans le nouvel ordre mondial.</p>
                     
                     <p>Mais je suis aussi un amoureux des mots. Écrivain, auteur, je crois profondément que l'analyse politique gagne à être partagée, discutée, voire débattue. C'est cette double casquette — le chercheur rigoureux et l'écrivain engagé — que j'apporte aujourd'hui à Ubuntu & Politique.</p>
                     
                     <p>Ici, je propose des analyses, des réflexions et des contributions sur l'actualité africaine et internationale, toujours avec un regard ancré dans les réalités du continent et une exigence de clarté. Parce que la politique, c'est d'abord une affaire de compréhension collective.</p>
+                </div>
+                
+                <div class="bio-column">
+                    <h3>English</h3>
+                    <p>I am Amadou Wagne, Ph.D. in Political Science, specializing in international governance. Research is my first passion — that constant laboratory where we dissect the mechanisms of power, institutional dynamics, and the major challenges shaping our world and Africa within the new global order.</p>
                     
-                    <div class="en">
-                        <h3>🇬🇧 English version</h3>
-                        <p>I am Amadou Wagne, Ph.D. in Political Science, specializing in international governance. Research is my first passion — that constant laboratory where we dissect the mechanisms of power, institutional dynamics, and the major challenges shaping our world and Africa within the new global order.</p>
-                        
-                        <p>But I am also a lover of words. As a writer and author, I firmly believe that political analysis gains strength when it is shared, discussed, and even debated. It is with this dual role — the rigorous researcher and the engaged writer — that I contribute to Ubuntu & Politique.</p>
-                        
-                        <p>Here, I offer analyses, reflections, and insights on African and global current affairs, always with a perspective grounded in the continent's realities and a commitment to clarity. Because politics, at its core, is about collective understanding.</p>
-                    </div>
+                    <p>But I am also a lover of words. As a writer and author, I firmly believe that political analysis gains strength when it is shared, discussed, and even debated. It is with this dual role — the rigorous researcher and the engaged writer — that I contribute to Ubuntu & Politique.</p>
+                    
+                    <p>Here, I offer analyses, reflections, and insights on African and global current affairs, always with a perspective grounded in the continent's realities and a commitment to clarity. Because politics, at its core, is about collective understanding.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section avec formulaire corrigé -->
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-title">
@@ -875,7 +848,6 @@
                 </div>
                 
                 <div class="contact-form">
-                    <!-- Formulaire Formspree avec le bon paramètre _next -->
                     <form action="https://formspree.io/f/xnjgaybr" method="POST">
                         <input type="hidden" name="_next" value="https://abdallahahmat07-debug.github.io/?success=1#contact">
                         <input type="hidden" name="_subject" value="Nouveau message depuis Ubuntu & Politique">
@@ -888,7 +860,6 @@
                         <button type="submit" class="btn">Envoyer le message</button>
                     </form>
                     
-                    <!-- Message de succès -->
                     <div id="form-success" class="form-success">
                         ✓ Message envoyé avec succès ! Merci de m'avoir contacté.
                     </div>
@@ -906,19 +877,12 @@
         </div>
     </footer>
 
-    <!-- Script pour afficher le message de succès -->
     <script>
-        // Vérifier si l'URL contient ?success=1
         if(window.location.href.indexOf('?success=1') > -1) {
-            // Afficher le message de succès
             document.getElementById('form-success').style.display = 'block';
-            
-            // Faire défiler jusqu'à la section contact
             setTimeout(function() {
                 document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
             }, 100);
-            
-            // Cacher le message après 5 secondes
             setTimeout(function() {
                 document.getElementById('form-success').style.display = 'none';
             }, 5000);
