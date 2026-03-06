@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ubuntu & Politique - Dr Amadou Wagne</title>
-    <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -27,11 +26,10 @@
             padding: 0 24px;
         }
 
-        /* ===== TOP BAR ULTRA MINCE ===== */
+        /* TOP BAR */
         .top-bar {
-            background-color: #0f3b2c; /* Vert profond */
+            background-color: #0f3b2c;
             padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
         }
         .top-bar .container {
             display: flex;
@@ -48,10 +46,10 @@
             transition: color 0.2s;
         }
         .top-bar .social-links a:hover {
-            color: #f5c542; /* Jaune doré */
+            color: #f5c542;
         }
 
-        /* ===== HEADER STICKY TRANSPARENT ===== */
+        /* HEADER */
         .main-header {
             position: sticky;
             top: 0;
@@ -89,10 +87,10 @@
             font-weight: 600;
         }
 
-        /* ===== HERO SECTION AVEC IMAGE DE FOND ===== */
+        /* HERO AVEC PHOTO */
         .hero {
             background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), 
-                        url('photo-profil.jpg'); /* Ici, c'est l'image de fond. Remplacez par une grande image paysage ou utilisez photo-profil.jpg */
+                        url('photo-profil.jpg');
             background-size: cover;
             background-position: center 30%;
             min-height: 80vh;
@@ -101,12 +99,11 @@
             position: relative;
             color: white;
         }
-        /* Overlay plus sombre pour faire ressortir le texte */
         .hero::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(15, 59, 44, 0.3); /* Teinte verte */
+            background: rgba(15, 59, 44, 0.3);
             z-index: 1;
         }
         .hero .container {
@@ -145,7 +142,7 @@
             color: #0f3b2c;
         }
 
-        /* ===== SECTIONS ===== */
+        /* SECTIONS */
         .section {
             padding: 80px 0;
         }
@@ -169,12 +166,37 @@
             background: #f5c542;
             margin: 0 auto 20px;
         }
-        .section-header p {
-            color: #5a6a72;
+
+        /* WELCOME BOX - TEXTE COMPLET */
+        .welcome-box {
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .welcome-box h3 {
+            color: #0f3b2c;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .welcome-box p {
+            color: #3e4f5a;
             font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .welcome-box .signature {
+            color: #0f3b2c;
+            font-style: italic;
+            font-weight: 500;
+            margin-top: 30px;
         }
 
-        /* ===== CARDS ===== */
+        /* CARDS */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -196,7 +218,7 @@
             height: 200px;
             background-size: cover;
             background-position: center;
-            background-color: #ddd; /* Fallback */
+            background-color: #ddd;
         }
         .card-content {
             padding: 24px;
@@ -238,7 +260,7 @@
             transform: translateX(5px);
         }
 
-        /* ===== BIOGRAPHIE 2 COLONNES ===== */
+        /* BIOGRAPHIE - VERSION ABRÉGÉE MAIS COMPLÈTE */
         .bio-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -259,10 +281,10 @@
         .bio-col p {
             color: #3e4f5a;
             margin-bottom: 20px;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
-        /* ===== CONTACT SECTION ===== */
+        /* CONTACT */
         .contact-section {
             background-color: #0f3b2c;
             color: white;
@@ -359,16 +381,15 @@
             transform: translateY(-2px);
         }
 
-        /* ===== FOOTER ===== */
+        /* FOOTER */
         footer {
             background-color: #0a2b20;
             color: rgba(255,255,255,0.7);
             padding: 30px 0;
             text-align: center;
-            border-top: 1px solid rgba(245,197,66,0.2);
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* RESPONSIVE */
         @media (max-width: 968px) {
             .hero {
                 min-height: 70vh;
@@ -389,6 +410,9 @@
             }
             .hero-content h1 {
                 font-size: 2.5rem;
+            }
+            .welcome-box {
+                padding: 30px;
             }
         }
     </style>
@@ -423,7 +447,7 @@
         </div>
     </header>
 
-    <!-- Hero avec grande image de fond -->
+    <!-- Hero avec photo -->
     <section id="accueil" class="hero">
         <div class="container">
             <div class="hero-content">
@@ -434,15 +458,19 @@
         </div>
     </section>
 
-    <!-- Message de bienvenue (optionnel, mais gardé) -->
+    <!-- Bienvenue - TEXTE COMPLET -->
     <section class="section alt-bg">
         <div class="container">
-            <div class="section-header">
-                <h2>Bienvenue</h2>
-                <div class="divider"></div>
-            </div>
-            <div style="max-width: 800px; margin: 0 auto; text-align: center; color: #3e4f5a;">
-                <p style="font-size: 1.2rem;">Que vous soyez chercheur, étudiant ou passionné, vous trouverez ici des analyses rigoureuses sur les dynamiques politiques sénégalaises et internationales.</p>
+            <div class="welcome-box">
+                <h3>Mot de bienvenue</h3>
+                <p>Que vous soyez Professeur, chercheur, étudiant, citoyen engagé ou simple curieux, vous trouverez dans ces pages des analyses approfondies, des contributions libres, des débats contradictoires et des regards croisés sur les dynamiques politiques au Sénégal et en Afrique qui traversent l'Afrique. Élections, mouvements sociaux, intégration régionale, justice, mémoire, développement, démocratie, géopolitique - chaque sujet est abordé avec rigueur et ouverture, dans un esprit de dialogue et de respect.</p>
+                
+                <p>Notre plateforme se veut une agora numérique où la parole circule, où les idées s'enrichissent mutuellement, où la différence n'est pas un obstacle mais une force. Nous croyons que la politique, loin d'être un champ de bataille, peut redevenir un espace de construction collective -- et c'est ensemble que nous y parviendrons.</p>
+                
+                <p>Alors, prenez place sous l'arbre à palabres. Lisez, réagissez, proposez vos textes. Faites de ce lieu le vôtre.</p>
+                
+                <p class="signature">Bienvenue dans la conversation. Bienvenue dans Ubuntu & Politique.</p>
+                <p style="text-align: right; font-weight: 500;">— L'équipe de rédaction</p>
             </div>
         </div>
     </section>
@@ -461,7 +489,7 @@
                     <div class="card-content">
                         <div class="card-meta"><span>Thèse</span><span>21 fév 2026</span></div>
                         <h3>Le Sénégal dans le grand échange sino-occidental</h3>
-                        <p>Mécanismes et perspectives d'une diplomatie du grand écart.</p>
+                        <p>Mécanismes, résistances et perspectives d'une diplomatie du grand écart.</p>
                         <a href="publication1.html" class="card-link">Lire <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -470,8 +498,8 @@
                     <div class="card-image" style="background-image: url('image-2.jpg');"></div>
                     <div class="card-content">
                         <div class="card-meta"><span>Analyse politique</span><span>22 jan 2025</span></div>
-                        <h3>Pour un néo-semi-présidentialisme sénégalais</h3>
-                        <p>Dialogue national et refondation institutionnelle.</p>
+                        <h3>Dialogue national et refondation politique</h3>
+                        <p>Pour un néo-semi-présidentialisme sénégalais.</p>
                         <a href="publication2.html" class="card-link">Lire <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -481,7 +509,7 @@
                     <div class="card-content">
                         <div class="card-meta"><span>Géopolitique</span><span>5 fév 2025</span></div>
                         <h3>La Stratégie du phare</h3>
-                        <p>Comment le Sénégal monétise sa paix.</p>
+                        <p>Comment le Sénégal monétise sa paix dans une région en feu.</p>
                         <a href="publication3.html" class="card-link">Lire <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -491,7 +519,7 @@
                     <div class="card-content">
                         <div class="card-meta"><span>Diplomatie</span><span>3 mar 2026</span></div>
                         <h3>Les racines sénégalaises, les ailes africaines</h3>
-                        <p>La candidature de Macky Sall à l'ONU.</p>
+                        <p>Mécanique d'une candidature africaine aux Nations unies.</p>
                         <a href="publication4.html" class="card-link">Lire <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -509,9 +537,9 @@
             <div class="card-grid">
                 <div class="card">
                     <div class="card-content">
-                        <div class="card-meta"><span>Parution thèse</span><span>mar 2026</span></div>
+                        <div class="card-meta"><span>Parution thèse</span><span>2 mar 2026</span></div>
                         <h3>L'été invincible</h3>
-                        <p>Retour sur un parcours de thèse.</p>
+                        <p>Retour sur un parcours de thèse. « Au milieu de l'été, j'apprenais enfin qu'il y avait en moi un été invincible. »</p>
                         <a href="article1.html" class="card-link">Lire <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -519,7 +547,7 @@
                     <div class="card-content">
                         <div class="card-meta"><span>Recherche</span><span>10 nov 2025</span></div>
                         <h3>Pour une souveraineté en creux</h3>
-                        <p>Repenser la relation sino-sénégalaise.</p>
+                        <p>Repenser la relation sino-sénégalaise pour éviter le piège de la dette.</p>
                         <a href="article2.html" class="card-link">Lire <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -527,6 +555,7 @@
                     <div class="card-content">
                         <div class="card-meta"><span>Dialogue national</span><span>18 sep 2025</span></div>
                         <h3>Les quatre piliers d'un néo-semi-présidentialisme</h3>
+                        <p>Une proposition institutionnelle pour le Sénégal.</p>
                         <a href="article3.html" class="card-link">Lire <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -534,6 +563,7 @@
                     <div class="card-content">
                         <div class="card-meta"><span>Diplomatie</span><span>5 mar 2026</span></div>
                         <h3>Le silence de Dakar</h3>
+                        <p>Anatomie d'un portage discret dans la candidature de Macky Sall.</p>
                         <a href="article4.html" class="card-link">Lire <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -541,7 +571,7 @@
         </div>
     </section>
 
-    <!-- Biographie -->
+    <!-- Biographie - VERSION ABRÉGÉE -->
     <section id="biographie" class="section">
         <div class="container">
             <div class="section-header">
@@ -551,13 +581,20 @@
             <div class="bio-grid">
                 <div class="bio-col">
                     <h3>Français</h3>
-                    <p>Je suis Amadou Wagne, docteur en sciences politiques et spécialiste des questions de gouvernance internationale. La recherche est ma passion première — ce laboratoire permanent où l'on dissèque les mécanismes du pouvoir.</p>
-                    <p>Écrivain, auteur, je crois profondément que l'analyse politique gagne à être partagée, discutée, voire débattue.</p>
+                    <p>Je suis Amadou Wagne, docteur en sciences politiques et spécialiste des questions de gouvernance internationale. La recherche est ma passion première — ce laboratoire permanent où l'on dissèque les mécanismes du pouvoir, les dynamiques institutionnelles et les grands défis qui traversent notre monde et l'Afrique dans le nouvel ordre mondial.</p>
+                    
+                    <p>Mais je suis aussi un amoureux des mots. Écrivain, auteur, je crois profondément que l'analyse politique gagne à être partagée, discutée, voire débattue. C'est cette double casquette — le chercheur rigoureux et l'écrivain engagé — que j'apporte aujourd'hui à Ubuntu & Politique.</p>
+                    
+                    <p>Ici, je propose des analyses, des réflexions et des contributions sur l'actualité africaine et internationale, toujours avec un regard ancré dans les réalités du continent et une exigence de clarté. Parce que la politique, c'est d'abord une affaire de compréhension collective.</p>
                 </div>
+                
                 <div class="bio-col">
                     <h3>English</h3>
-                    <p>I am Amadou Wagne, Ph.D. in Political Science, specializing in international governance. Research is my first passion — that constant laboratory where we dissect the mechanisms of power.</p>
-                    <p>I firmly believe that political analysis gains strength when it is shared, discussed, and even debated.</p>
+                    <p>I am Amadou Wagne, Ph.D. in Political Science, specializing in international governance. Research is my first passion — that constant laboratory where we dissect the mechanisms of power, institutional dynamics, and the major challenges shaping our world and Africa within the new global order.</p>
+                    
+                    <p>But I am also a lover of words. As a writer and author, I firmly believe that political analysis gains strength when it is shared, discussed, and even debated. It is with this dual role — the rigorous researcher and the engaged writer — that I contribute to Ubuntu & Politique.</p>
+                    
+                    <p>Here, I offer analyses, reflections, and insights on African and global current affairs, always with a perspective grounded in the continent's realities and a commitment to clarity. Because politics, at its core, is about collective understanding.</p>
                 </div>
             </div>
         </div>
@@ -572,15 +609,15 @@
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Échangeons</h3>
+                    <h3>Échangeons ensemble</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</p>
                     <p><i class="fas fa-phone"></i> +221 77 871 70 68</p>
                     <p><i class="fas fa-envelope"></i> wagne6151@gmail.com</p>
                     <a href="mailto:wagne6151@gmail.com" class="contact-email">Envoyer un email</a>
                     <div class="social-footer">
-                        <a href="#"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
-                        <a href="#"><i class="fab fa-facebook"></i><span>Facebook</span></a>
-                        <a href="#"><i class="fab fa-x-twitter"></i><span>X</span></a>
+                        <a href="https://www.linkedin.com/in/dr-amadou-wagne-905aa61a6" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+                        <a href="https://www.facebook.com/share/1XKHBKozrh/" target="_blank"><i class="fab fa-facebook"></i><span>Facebook</span></a>
+                        <a href="https://x.com/chaakidawagne" target="_blank"><i class="fab fa-x-twitter"></i><span>X</span></a>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -627,8 +664,14 @@
         // Message de succès du formulaire
         if (window.location.href.indexOf("?success=1") > -1) {
             const msg = document.createElement("div");
-            msg.className = "form-success";
-            msg.textContent = "Message envoyé avec succès !";
+            msg.style.background = "#f5c542";
+            msg.style.color = "#0f3b2c";
+            msg.style.padding = "16px";
+            msg.style.borderRadius = "8px";
+            msg.style.marginTop = "20px";
+            msg.style.textAlign = "center";
+            msg.style.fontWeight = "600";
+            msg.textContent = "✓ Message envoyé avec succès !";
             document.querySelector(".contact-form").appendChild(msg);
             setTimeout(() => msg.remove(), 5000);
         }
