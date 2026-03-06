@@ -1,4 +1,4 @@
-media: 'images'
+media: '.'  # Les images sont à la racine (dossier courant)
 
 collections:
   - name: 'publications'
