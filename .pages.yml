@@ -1,26 +1,16 @@
-media:
-  - name: 'images'
-    label: 'Images'
-    input: './'  # Le dossier racine
-    output: './'  # Publier à la racine
-
 collections:
   - name: 'publications'
     label: 'Publications'
     path: 'publications'
-    format: 'frontmatter'
     fields:
       - { name: 'title', label: 'Titre', type: 'string', required: true }
       - { name: 'date', label: 'Date', type: 'date', required: true }
       - { name: 'category', label: 'Catégorie', type: 'string' }
-      - { name: 'image', label: 'Image à la une', type: 'image' }
-      - { name: 'excerpt', label: 'Résumé', type: 'text' }
       - { name: 'body', label: 'Contenu', type: 'rich-text' }
 
   - name: 'articles'
     label: 'Articles courts'
     path: 'articles'
-    format: 'frontmatter'
     fields:
       - { name: 'title', label: 'Titre', type: 'string', required: true }
       - { name: 'date', label: 'Date', type: 'date', required: true }
