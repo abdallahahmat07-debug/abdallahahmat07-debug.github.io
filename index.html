@@ -840,7 +840,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section avec formulaire corrigé -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-title">
@@ -875,10 +875,9 @@
                 </div>
                 
                 <div class="contact-form">
-                    <!-- Formulaire Formspree CORRIGÉ -->
+                    <!-- Formulaire Formspree avec le bon paramètre _next -->
                     <form action="https://formspree.io/f/xnjgaybr" method="POST">
-                        <!-- Champs cachés CORRIGÉS -->
-                        <input type="hidden" name="_redirect" value="https://abdallahahmat07-debug.github.io">
+                        <input type="hidden" name="_next" value="https://abdallahahmat07-debug.github.io/?success=1#contact">
                         <input type="hidden" name="_subject" value="Nouveau message depuis Ubuntu & Politique">
                         <input type="hidden" name="_captcha" value="false">
                         
