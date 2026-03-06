@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: abdallahahmat07-debug/abdallahahmat07-debug.github.io
+  branch: main
+
+media_folder: 'images'  # Les images seront stockées ici
+public_folder: '/images'
+
+collections:
+  - name: 'publications'
+    label: 'Publications'
+    folder: 'publications'
+    create: true
+    fields:
+      - { label: 'Titre', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Catégorie', name: 'category', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Résumé', name: 'excerpt', widget: 'text', required: false }
+      - { label: 'Contenu', name: 'body', widget: 'markdown' }
+
+  - name: 'articles'
+    label: 'Articles courts'
+    folder: 'articles'
+    create: true
+    fields:
+      - { label: 'Titre', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Catégorie', name: 'category', widget: 'string' }
+      - { label: 'Contenu', name: 'body', widget: 'markdown' }
