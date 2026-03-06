@@ -31,10 +31,11 @@
             padding: 0 24px;
         }
 
-        /* TOP BAR - VERT ÉLÉGANT */
+        /* TOP BAR ULTRA MINIMAL */
         .top-bar {
-            background: #0a4d3c;
+            background: #0a1a1a;
             padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .top-bar .container {
@@ -49,7 +50,7 @@
         }
 
         .social-links a {
-            color: #ffffff;
+            color: #9ca3af;
             font-size: 18px;
             transition: all 0.3s ease;
         }
@@ -59,13 +60,13 @@
             transform: translateY(-2px);
         }
 
-        /* HEADER - FOND BLANC */
+        /* HEADER LUXE */
         .main-header {
-            background: #ffffff;
+            background: #0a1a1a;
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid #eaeaea;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .main-header .container {
@@ -78,7 +79,10 @@
         .logo h1 {
             font-size: clamp(24px, 5vw, 36px);
             font-weight: 800;
-            color: #0a4d3c;
+            background: linear-gradient(135deg, #ffffff 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             letter-spacing: -0.02em;
         }
 
@@ -89,7 +93,7 @@
         }
 
         nav a {
-            color: #2e3d44;
+            color: #9ca3af;
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
@@ -115,16 +119,30 @@
 
         nav a:hover,
         nav a.active {
-            color: #0a4d3c;
+            color: #ffffff;
         }
 
-        /* HERO - PHOTO EN VEDETTE */
+        /* HERO SPECTACULAIRE */
         .hero {
-            background: #ffffff;
+            background: linear-gradient(135deg, #0a1a1a 0%, #1a2e2e 100%);
             padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(251,191,36,0.1) 0%, transparent 50%);
         }
 
         .hero-content {
+            position: relative;
+            z-index: 2;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
@@ -136,7 +154,7 @@
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 16px;
-            color: #0a4d3c;
+            color: #ffffff;
         }
 
         .hero-text h1 span {
@@ -148,15 +166,13 @@
 
         .hero-text p {
             font-size: clamp(16px, 2vw, 20px);
-            color: #4b5563;
+            color: #9ca3af;
             font-weight: 400;
             max-width: 500px;
         }
 
         .hero-image {
             position: relative;
-            display: flex;
-            justify-content: center;
         }
 
         .hero-image img {
@@ -164,25 +180,26 @@
             max-width: 450px;
             height: auto;
             aspect-ratio: 1;
-            border-radius: 20px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             object-fit: cover;
-            box-shadow: 0 30px 50px -20px rgba(10,77,60,0.3);
-            border: 4px solid #ffffff;
-            transition: transform 0.5s ease;
+            border: 4px solid rgba(251,191,36,0.3);
+            box-shadow: 0 50px 80px -20px rgba(0,0,0,0.6);
+            animation: morph 8s ease-in-out infinite;
         }
 
-        .hero-image img:hover {
-            transform: scale(1.02);
+        @keyframes morph {
+            0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
         }
 
-        /* SECTIONS */
+        /* SECTIONS MODERNES */
         .section-modern {
             padding: 100px 0;
             background: #ffffff;
         }
 
         .section-modern.alt {
-            background: #f9fafb;
+            background: #fafafa;
         }
 
         .section-header {
@@ -194,7 +211,7 @@
         .section-header h2 {
             font-size: clamp(32px, 5vw, 42px);
             font-weight: 800;
-            color: #0a4d3c;
+            color: #0a1a1a;
             margin-bottom: 16px;
         }
 
@@ -210,37 +227,47 @@
             font-size: 18px;
         }
 
-        /* WELCOME BOX */
+        /* WELCOME BOX STYLISH */
         .welcome-box {
-            background: #ffffff;
+            background: linear-gradient(135deg, #0a1a1a 0%, #1a2e2e 100%);
             padding: 60px;
-            border-radius: 20px;
-            color: #0a4d3c;
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
-            border: 1px solid #eaeaea;
+            border-radius: 30px;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-box::before {
+            content: '"';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 200px;
+            color: rgba(251,191,36,0.1);
+            font-family: serif;
         }
 
         .welcome-box h3 {
-            color: #0a4d3c;
+            color: #fbbf24;
             font-size: 24px;
             margin-bottom: 24px;
             font-weight: 600;
         }
 
         .welcome-box p {
-            color: #4b5563;
+            color: #e5e7eb;
             font-size: 18px;
             margin-bottom: 20px;
+            max-width: 800px;
         }
 
         .welcome-box .signature {
-            color: #0a4d3c;
+            color: #fbbf24;
             font-size: 20px;
             font-style: italic;
-            font-weight: 500;
         }
 
-        /* GRID CARDS */
+        /* GRID CARDS LUXE */
         .grid-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -250,33 +277,34 @@
 
         .card {
             background: #ffffff;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px -5px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border: 1px solid #eaeaea;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #f0f0f0;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(10,77,60,0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -10px rgba(251,191,36,0.3);
             border-color: #fbbf24;
         }
 
         .card-image {
             height: 220px;
             overflow: hidden;
+            position: relative;
         }
 
         .card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s ease;
         }
 
         .card:hover .card-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         .card-content {
@@ -307,7 +335,7 @@
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: #0a4d3c;
+            color: #0a1a1a;
             line-height: 1.4;
         }
 
@@ -315,10 +343,11 @@
             color: #6b7280;
             font-size: 15px;
             margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         .card-link {
-            color: #0a4d3c;
+            color: #0a1a1a;
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
@@ -335,7 +364,7 @@
             gap: 12px;
         }
 
-        /* BIOGRAPHIE */
+        /* BIOGRAPHIE 2 COLONNES */
         .bio-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -345,18 +374,20 @@
         .bio-card {
             background: #ffffff;
             padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px -5px rgba(0,0,0,0.05);
-            border: 1px solid #eaeaea;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+            border: 1px solid #f0f0f0;
             transition: all 0.3s ease;
         }
 
         .bio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -10px rgba(251,191,36,0.2);
             border-color: #fbbf24;
         }
 
         .bio-card h3 {
-            color: #0a4d3c;
+            color: #0a1a1a;
             font-size: 24px;
             margin-bottom: 20px;
             font-weight: 700;
@@ -380,9 +411,9 @@
             margin-bottom: 16px;
         }
 
-        /* CONTACT */
+        /* CONTACT SECTION LUXE */
         .contact-section {
-            background: linear-gradient(135deg, #0a4d3c 0%, #1a6d5a 100%);
+            background: linear-gradient(135deg, #0a1a1a 0%, #1a2e2e 100%);
             padding: 100px 0;
             color: #ffffff;
         }
@@ -445,7 +476,7 @@
 
         .social-grid a span {
             font-size: 12px;
-            color: #e5e7eb;
+            color: #9ca3af;
         }
 
         .social-grid a:hover {
@@ -453,11 +484,11 @@
         }
 
         .contact-form {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
             padding: 40px;
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .contact-form input,
@@ -465,8 +496,8 @@
             width: 100%;
             padding: 16px;
             margin-bottom: 20px;
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
             border-radius: 12px;
             color: #ffffff;
             font-family: inherit;
@@ -477,17 +508,17 @@
         .contact-form textarea:focus {
             outline: none;
             border-color: #fbbf24;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.15);
         }
 
         .contact-form input::placeholder,
         .contact-form textarea::placeholder {
-            color: rgba(255,255,255,0.7);
+            color: #9ca3af;
         }
 
         .btn {
             background: #fbbf24;
-            color: #0a4d3c;
+            color: #0a1a1a;
             border: none;
             padding: 16px 30px;
             border-radius: 12px;
@@ -501,31 +532,32 @@
         .btn:hover {
             background: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 20px 30px -10px rgba(251,191,36,0.3);
+            box-shadow: 0 20px 30px -10px rgba(251,191,36,0.4);
         }
 
         /* FOOTER */
         footer {
-            background: #0a4d3c;
-            color: #ffffff;
+            background: #0a1a1a;
+            color: #9ca3af;
             padding: 40px 0;
             text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .footer-content {
             font-size: 14px;
-            opacity: 0.8;
+            letter-spacing: 0.5px;
         }
 
         /* MESSAGE SUCCÈS */
         .form-success {
-            background: #fbbf24;
-            color: #0a4d3c;
+            background: #10b981;
+            color: white;
             padding: 16px;
             border-radius: 12px;
             margin-top: 20px;
             text-align: center;
-            font-weight: 600;
+            font-weight: 500;
             animation: slideUp 0.5s ease;
         }
 
@@ -534,7 +566,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE ULTRA OPTIMISÉ */
         @media (max-width: 968px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -548,6 +580,10 @@
 
             .hero-image {
                 order: -1;
+            }
+
+            .hero-image img {
+                margin: 0 auto;
             }
 
             .contact-grid,
@@ -568,23 +604,33 @@
                 justify-content: center;
             }
 
+            .welcome-box {
+                padding: 40px 24px;
+            }
+
             .grid-cards {
                 grid-template-columns: 1fr;
             }
 
-            .welcome-box {
-                padding: 40px 24px;
+            .social-grid {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
 
-        .active {
-            color: #0a4d3c;
-            font-weight: 600;
+        /* ANIMATIONS ADDITIONNELLES */
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <!-- Top Bar - VERT AVEC TOUS LES RÉSEAUX -->
+    <!-- Top Bar Luxe -->
     <div class="top-bar">
         <div class="container">
             <div class="social-links">
@@ -595,7 +641,7 @@
         </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header Moderne -->
     <header class="main-header">
         <div class="container">
             <div class="logo">
@@ -613,15 +659,15 @@
         </div>
     </header>
 
-    <!-- Hero avec photo officielle mise en avant -->
+    <!-- Hero Spectaculaire -->
     <section id="accueil" class="hero">
         <div class="container hero-content">
-            <div class="hero-text">
+            <div class="hero-text fade-in">
                 <h1>Dr <span>Amadou Wagne</span></h1>
                 <p>Docteur en Sciences Politiques<br>Spécialiste en Gouvernance Internationale</p>
             </div>
-            <div class="hero-image">
-                <img src="photo-profil.jpg" alt="Dr Amadou Wagne - Photo Officielle">
+            <div class="hero-image fade-in">
+                <img src="photo-profil.jpg" alt="Dr Amadou Wagne">
             </div>
         </div>
     </section>
@@ -632,7 +678,7 @@
             <div class="welcome-box">
                 <h3>Mot de bienvenue</h3>
                 <p>Que vous soyez Professeur, chercheur, étudiant, citoyen engagé ou simple curieux, vous trouverez dans ces pages des analyses approfondies, des contributions libres, des débats contradictoires et des regards croisés sur les dynamiques politiques au Sénégal et en Afrique.</p>
-                <p>Notre plateforme se veut une agora numérique où la parole circule, où les idées s'enrichissent mutuellement, où la différence n'est pas un obstacle mais une force.</p>
+                <p>Notre plateforme se veut une agora numérique où la parole circule, où les idées s'enrichissent mutuellement, où la différence n'est pas un obstacle mais une force. Nous croyons que la politique peut redevenir un espace de construction collective.</p>
                 <p class="signature">Bienvenue dans Ubuntu & Politique.</p>
                 <p style="text-align: right;">— L'équipe de rédaction</p>
             </div>
@@ -790,18 +836,20 @@
                     <h3>Français</h3>
                     <p>Je suis Amadou Wagne, docteur en sciences politiques et spécialiste des questions de gouvernance internationale. La recherche est ma passion première — ce laboratoire permanent où l'on dissèque les mécanismes du pouvoir, les dynamiques institutionnelles et les grands défis qui traversent notre monde et l'Afrique dans le nouvel ordre mondial.</p>
                     <p>Mais je suis aussi un amoureux des mots. Écrivain, auteur, je crois profondément que l'analyse politique gagne à être partagée, discutée, voire débattue. C'est cette double casquette — le chercheur rigoureux et l'écrivain engagé — que j'apporte aujourd'hui à Ubuntu & Politique.</p>
+                    <p>Ici, je propose des analyses, des réflexions et des contributions sur l'actualité africaine et internationale, toujours avec un regard ancré dans les réalités du continent et une exigence de clarté. Parce que la politique, c'est d'abord une affaire de compréhension collective.</p>
                 </div>
                 
                 <div class="bio-card">
                     <h3>English</h3>
                     <p>I am Amadou Wagne, Ph.D. in Political Science, specializing in international governance. Research is my first passion — that constant laboratory where we dissect the mechanisms of power, institutional dynamics, and the major challenges shaping our world and Africa within the new global order.</p>
                     <p>But I am also a lover of words. As a writer and author, I firmly believe that political analysis gains strength when it is shared, discussed, and even debated. It is with this dual role — the rigorous researcher and the engaged writer — that I contribute to Ubuntu & Politique.</p>
+                    <p>Here, I offer analyses, reflections, and insights on African and global current affairs, always with a perspective grounded in the continent's realities and a commitment to clarity. Because politics, at its core, is about collective understanding.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-header" style="color: white;">
@@ -828,7 +876,7 @@
                             <span>Facebook</span>
                         </a>
                         <a href="https://x.com/chaakidawagne" target="_blank">
-                            <i class="fab fa-x-twitter"></i>
+                            <i class="fab fa-twitter"></i>
                             <span>X</span>
                         </a>
                     </div>
