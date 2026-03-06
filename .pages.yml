@@ -1,4 +1,8 @@
-media: '.'  # Les images sont à la racine (dossier courant)
+media:
+  - name: 'images'
+    label: 'Images'
+    input: './'  # Le dossier racine
+    output: './'  # Publier à la racine
 
 collections:
   - name: 'publications'
