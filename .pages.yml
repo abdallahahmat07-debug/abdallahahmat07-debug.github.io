@@ -3,16 +3,16 @@ collections:
     label: 'Publications'
     path: 'publications'
     fields:
-      - {name: 'title', label: 'Titre', type: 'string', required: true}
-      - {name: 'date', label: 'Date', type: 'date', required: true}
-      - {name: 'category', label: 'Catégorie', type: 'string'}
-      - {name: 'body', label: 'Contenu', type: 'rich-text'}
+      - { name: 'title', label: 'Titre', type: 'string', required: true }
+      - { name: 'date', label: 'Date', type: 'date', required: true }
+      - { name: 'category', label: 'Catégorie', type: 'string' }
+      - { name: 'body', label: 'Contenu', type: 'rich-text' }
 
   - name: 'articles'
     label: 'Articles courts'
     path: 'articles'
     fields:
-      - {name: 'title', label: 'Titre', type: 'string', required: true}
-      - {name: 'date', label: 'Date', type: 'date', required: true}
-      - {name: 'category', label: 'Catégorie', type: 'string'}
-      - {name: 'body', label: 'Contenu', type: 'rich-text'}
+      - { name: 'title', label: 'Titre', type: 'string', required: true }
+      - { name: 'date', label: 'Date', type: 'date', required: true }
+      - { name: 'category', label: 'Catégorie', type: 'string' }
+      - { name: 'body', label: 'Contenu', type: 'rich-text' }
