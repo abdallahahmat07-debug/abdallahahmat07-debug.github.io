@@ -196,7 +196,7 @@
             margin-top: 30px;
         }
 
-        /* CARDS */
+        /* CARDS - IMAGES AJUSTÉES INDIVIDUELLEMENT */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -216,8 +216,9 @@
         }
         .card-image {
             height: 200px;
+            background-size: cover;
             background-repeat: no-repeat;
-            background-color: #f5f5f5;
+            background-color: #f0f0f0;
         }
         .card-content {
             padding: 24px;
@@ -468,7 +469,7 @@
         </div>
     </section>
 
-    <!-- Publications avec images ajustées selon leurs dimensions -->
+    <!-- Publications avec images ajustées -->
     <section id="publications" class="section">
         <div class="container">
             <div class="section-header">
@@ -476,9 +477,9 @@
                 <div class="divider"></div>
             </div>
             <div class="card-grid">
-                <!-- Image 1 - Dimensions 864x986 (format portrait) -->
+                <!-- Image 1 - Tête trop proche (décaler vers le bas) -->
                 <div class="card">
-                    <div class="card-image" style="background-image: url('image-1.jpg'); background-position: center 35%; background-size: cover;"></div>
+                    <div class="card-image" style="background-image: url('image-1.jpg'); background-position: center 35%;"></div>
                     <div class="card-content">
                         <div class="card-meta"><span>Thèse</span><span>21 fév 2026</span></div>
                         <h3>Le Sénégal dans le grand échange sino-occidental</h3>
@@ -487,9 +488,9 @@
                     </div>
                 </div>
                 
-                <!-- Image 2 - Dimensions 864x1069 (très verticale) -->
+                <!-- Image 2 - Trop zoomée (utiliser contain pour voir l'image entière) -->
                 <div class="card">
-                    <div class="card-image" style="background-image: url('image-2.jpg'); background-position: center 25%; background-size: cover;"></div>
+                    <div class="card-image" style="background-image: url('image-2.jpg'); background-size: contain; background-position: center; background-color: #f0f0f0;"></div>
                     <div class="card-content">
                         <div class="card-meta"><span>Analyse politique</span><span>22 jan 2025</span></div>
                         <h3>Dialogue national et refondation politique</h3>
@@ -498,9 +499,9 @@
                     </div>
                 </div>
                 
-                <!-- Image 3 - Dimensions 609x720 (plus petite, plus équilibrée) -->
+                <!-- Image 3 - Tête rapprochée (décaler vers le bas) -->
                 <div class="card">
-                    <div class="card-image" style="background-image: url('image-3.jpg'); background-position: center 40%; background-size: cover;"></div>
+                    <div class="card-image" style="background-image: url('image-3.jpg'); background-position: center 40%;"></div>
                     <div class="card-content">
                         <div class="card-meta"><span>Géopolitique</span><span>5 fév 2025</span></div>
                         <h3>La Stratégie du phare</h3>
@@ -509,9 +510,9 @@
                     </div>
                 </div>
                 
-                <!-- Image 4 - Dimensions 864x994 (format portrait) -->
+                <!-- Image 4 - Ajustement standard -->
                 <div class="card">
-                    <div class="card-image" style="background-image: url('image-4.jpg'); background-position: center 30%; background-size: cover;"></div>
+                    <div class="card-image" style="background-image: url('image-4.jpg'); background-position: center 30%;"></div>
                     <div class="card-content">
                         <div class="card-meta"><span>Diplomatie</span><span>3 mar 2026</span></div>
                         <h3>Les racines sénégalaises, les ailes africaines</h3>
@@ -574,14 +575,12 @@
             </div>
             <div class="bio-grid">
                 <div class="bio-col">
-                    <h3>Français</h3>
-                    <p>Je suis Amadou Wagne, docteur en sciences politiques et spécialiste des questions de gouvernance internationale. La recherche est ma passion première — ce laboratoire permanent où l'on dissèque les mécanismes du pouvoir, les dynamiques institutionnelles et les grands défis qui traversent notre monde et l'Afrique dans le nouvel ordre mondial.</p>
-                    <p>Mais je suis aussi un amoureux des mots. Écrivain, auteur, je crois profondément que l'analyse politique gagne à être partagée, discutée, voire débattue.</p>
+                    <h3>Fr</h3>
+                    <p>Je suis Amadou Wagne, docteur en sciences politiques et spécialiste des questions de gouvernance internationale.</p>
                 </div>
                 <div class="bio-col">
-                    <h3>English</h3>
-                    <p>I am Amadou Wagne, Ph.D. in Political Science, specializing in international governance. Research is my first passion — that constant laboratory where we dissect the mechanisms of power, institutional dynamics, and the major challenges shaping our world and Africa within the new global order.</p>
-                    <p>But I am also a lover of words. As a writer and author, I firmly believe that political analysis gains strength when it is shared, discussed, and even debated.</p>
+                    <h3>Eng</h3>
+                    <p>I am Amadou Wagne, Ph.D. in Political Science, specializing in international governance.</p>
                 </div>
             </div>
         </div>
@@ -602,9 +601,9 @@
                     <p><i class="fas fa-envelope"></i> wagne6151@gmail.com</p>
                     <a href="mailto:wagne6151@gmail.com" class="contact-email">Envoyer un email</a>
                     <div class="social-footer">
-                        <a href="https://www.linkedin.com/in/dr-amadou-wagne-905aa61a6" target="_blank"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
-                        <a href="https://www.facebook.com/share/1XKHBKozrh/" target="_blank"><i class="fab fa-facebook"></i><span>Facebook</span></a>
-                        <a href="https://x.com/chaakidawagne" target="_blank"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+                        <a href="#"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+                        <a href="#"><i class="fab fa-facebook"></i><span>Facebook</span></a>
+                        <a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -626,22 +625,6 @@
             <p>© 2026 Ubuntu & Politique · Tous droits réservés</p>
         </div>
     </footer>
-
-    <script>
-        // Message de succès du formulaire
-        if (window.location.href.indexOf("?success=1") > -1) {
-            const msg = document.createElement("div");
-            msg.style.background = "#f5c542";
-            msg.style.color = "#0f3b2c";
-            msg.style.padding = "16px";
-            msg.style.borderRadius = "8px";
-            msg.style.marginTop = "20px";
-            msg.style.textAlign = "center";
-            msg.style.fontWeight = "600";
-            msg.textContent = "✓ Message envoyé avec succès !";
-            document.querySelector(".contact-form").appendChild(msg);
-            setTimeout(() => msg.remove(), 5000);
-        }
-    </script>
 </body>
 </html>
+
